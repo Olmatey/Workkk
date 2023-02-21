@@ -272,8 +272,8 @@ header {
   align-items: center;
 }
 
-.no-cursor {
-  cursor: not-allowed;
+.no-cursor  {
+  cursor: not-allowed !important;
 }
 
 /* 
@@ -504,9 +504,9 @@ select {
   width: 100%;
   max-width: 200px;
 }
-command{
 
-}
+
+
 .drinks__loading {
   width: 100%;
   display: flex;

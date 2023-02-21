@@ -9,21 +9,31 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 const Drinks = ({drinks: initialDrinks}) => {
 const [drinks, setDrinks] = useState(initialDrinks)
 
+const [search, setSearch] = useState()
+
+
+
 
     function filterDrinks(filter){
 
 
         if(filter === "ALL_DRINKS") {
-            setDrinks(drinks.filter((drink) => drink.type ))
+            setDrinks(initialDrinks.filter((drink) => drink.type ))
         }
        
         if(filter === "BEER") {
-            setDrinks(drinks.filter((drink) => drink.type === "Beer" ))
+            setDrinks(initialDrinks.filter((drink) => drink.type === "Beer" ))
         }
 
         
         if (filter === "WINE") {
-            setDrinks(drinks.filter((drink) => drink.type === "Wine" ))
+            setDrinks(initialDrinks.filter((drink) => drink.type === "Wine" ))
+        }
+        if (filter === "SPIRITS") {
+            setDrinks(initialDrinks.filter((drink) => drink.type === "Spirits" ))
+        } 
+        if (filter === "SALE") {
+            setDrinks(initialDrinks.filter((drink) => drink.isSale))
         }
             }
 
@@ -39,19 +49,23 @@ const [drinks, setDrinks] = useState(initialDrinks)
 
                             <div className="box__container">
                                 <table className="element__container">
-                                    <tr>
+                                    <tbody> 
+                                    <tr >
                                         <td>
-                                            <input type="text" placeholder='Search' className="search" />
+                                            <input type="text" value={search} onChange={(e) => setSearch(e.target.value)}
+                                             className="search" />
                                         </td>
                                         <td>
-                                            <a href="#" className="icon">
-                                            <FontAwesomeIcon icon="fa-magnifying-glass" />
+                                            <a href="#" className="icon no-cursor">
+                                            <FontAwesomeIcon className='no-cursor' icon="fa-magnifying-glass" />
                                             </a>
                                         </td>
                                     </tr>
+                                    </tbody>
                                 </table>
                             </div>
-
+                            
+   
 
                             
                             <select name="" id="filter" defaultValue='DEFAULT' onChange={(event) => filterDrinks(event.target.value)}>
@@ -59,13 +73,21 @@ const [drinks, setDrinks] = useState(initialDrinks)
                                 <option value="ALL_DRINKS">All Drinks</option>
                                 <option value="BEER">Beer</option>
                                 <option value="WINE">Wine</option>
+                                <option value="SPIRITS">Spirits</option>
+                                <option value="SALE">Sale Items</option>
 
 
                             </select>
                         </div>
                         <div className="drinks">
                             {
-                           drinks.map((drink) => ( <Drink drink={drink} key={drink.id}/>))
+                         drinks
+                        .filter((drink) => {
+                            return !search  ? (drink) : drink.productName.includes(search)
+                            
+                           }) 
+                           .map((drink) => ( <Drink drink={drink} key={drink.id}/>))
+                           
 
                             } 
 
