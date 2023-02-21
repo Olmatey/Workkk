@@ -4,9 +4,9 @@ Thank you for considering my React project for assessment. This project was crea
 Tech Stack
 The following technologies were used in the creation of this project:
 
-React.js
-HTML
-React Router
+React.js, 
+HTML, 
+React Router, 
 CSS Modules
 
 #Installation
