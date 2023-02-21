@@ -36,7 +36,7 @@ CSS
 JEST
 
 Final comment:
-I would like to thank you again. I am a raw developer that strives for perfection.
+I would like to thank you again. I am a raw developer and would consider myself at a junior level that strives for perfection.
 I went out of my way and created a landing page and drinks page. I used html and react best practises to create this site.
 
 PROS
