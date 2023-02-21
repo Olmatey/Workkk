@@ -82,8 +82,8 @@ const [search, setSearch] = useState()
                         <div className="drinks">
                             {
                          drinks
-                        .filter((drink) => {
-                            return !search  ? (drink) : drink.productName.includes(search)
+                        .filter((drink) => { 
+                            return !search  ? (drink) : drink.productName.includes(search) 
                             
                            }) 
                            .map((drink) => ( <Drink drink={drink} key={drink.id}/>))
