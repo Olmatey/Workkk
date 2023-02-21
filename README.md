@@ -1,4 +1,6 @@
 React Code Assessment
+
+PLEASE NOTE: there were no images on file so i had to insert my own image and use it for all the DRINKS
 Thank you for considering my React project for assessment. This project was created to demonstrate my React programming skills and problem-solving abilities.
 
 Tech Stack
